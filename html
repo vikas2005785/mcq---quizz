@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MCQ Quiz</title>
+</head>
+<body>
+
+<h2>Simple MCQ Quiz</h2>
+
+<form id="quiz">
+    <p>1. What is HTML?</p>
+    <input type="radio" name="q1" value="a"> Programming Language<br>
+    <input type="radio" name="q1" value="b"> Markup Language<br>
+    <input type="radio" name="q1" value="c"> Database<br><br>
+
+    <p>2. Which is used for styling?</p>
+    <input type="radio" name="q2" value="a"> HTML<br>
+    <input type="radio" name="q2" value="b"> CSS<br>
+    <input type="radio" name="q2" value="c"> Python<br><br>
+
+    <button type="button" onclick="check()">Submit</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+function check() {
+    let score = 0;
+    if (document.querySelector('input[name="q1"]:checked')?.value === "b") score++;
+    if (document.querySelector('input[name="q2"]:checked')?.value === "b") score++;
+    document.getElementById("result").innerText = "Your Score: " + score;
+}
+</script>
+
+</body>
+</html>
